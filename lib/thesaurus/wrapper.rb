@@ -12,7 +12,7 @@ module Thesaurus
     end
 
     def look_up
-      parse(Nokogiri::HTML(open(url)))
+      parse(Nokogiri::HTML(URI.open(url)))
     rescue OpenURI::HTTPError
       "Cannot connect to thesaurus.com"
     end
